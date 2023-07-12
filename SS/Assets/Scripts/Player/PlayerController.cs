@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 moviTecla;
 
+    [SerializeField] private PlayerShield escudo;
+
     void Start()
     {
     }
