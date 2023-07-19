@@ -7,19 +7,19 @@ using UnityEngine.UI;
 public class vidaPlayer : MonoBehaviour
 {
     public Slider barraDeVidaPlayer;
-    
     public int maxVida;
-
     public int atualVida;
 
-    public bool escudo;
-
     public int chances = 3;
-
     public Text textoChances;
 
+    public GameObject escudoPlayer;
+    public bool escudo;
+    public int maxVidaEscudo;
+    public int vidaAtualEscudo;
+
     public GameObject player;
-    // Start is called before the first frame update
+    
     void Start()
     {
         textoChances.text = "0" + chances + " x";
@@ -27,9 +27,11 @@ public class vidaPlayer : MonoBehaviour
         atualVida = maxVida;
         barraDeVidaPlayer.maxValue = maxVida;
         barraDeVidaPlayer.value = atualVida;
+        
+        escudoPlayer.SetActive(false);
+        escudo = false;
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         RetirarChances();
@@ -45,6 +47,24 @@ public class vidaPlayer : MonoBehaviour
             Debug.Log(atualVida);
             
         }
+        else
+        {
+            vidaAtualEscudo -= danoRecebido;
+
+            if (vidaAtualEscudo <= 0)
+            {
+                escudoPlayer.SetActive(false);
+                escudo = false;
+            }
+        }
+    }
+
+    public void AtivarEscudo()
+    {
+        vidaAtualEscudo = maxVidaEscudo;
+        
+        escudoPlayer.SetActive(true);
+        escudo = true;
     }
 
     public void RetirarChances()

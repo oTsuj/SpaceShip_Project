@@ -19,4 +19,5 @@ public class TiroRapido : ArmaBasica
         //Atirar o laser
         CriarLaser(this.localDisparo.position);
     }
+    
 }

@@ -14,8 +14,13 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private PlayerShield escudo;
 
+    [SerializeField] private ControladorArma controladorArma;
+
+    public bool pegouPowerUpTiro;
+
     void Start()
     {
+        EquiparTiroRapido();
     }
     
     void Update()
@@ -51,5 +56,26 @@ public class PlayerController : MonoBehaviour
             Destroy(other.gameObject);
         }
         
+    }
+
+
+    public void EquiparTiroRapido()
+    {
+        this.controladorArma.EquiparTiroRapido();
+    }
+
+    public void EquiparTiroDeFoguete()
+    {
+        this.controladorArma.EquiparTiroDeFoguete();
+    }
+
+    public void EquiparTiroLaser()
+    {
+        this.controladorArma.EquiparTiroLaser();
+    }
+
+    public void EquiparTiroUp()
+    {
+        this.controladorArma.EquiparArmaPowerUp();
     }
 }

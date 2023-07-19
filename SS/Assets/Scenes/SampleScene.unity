@@ -1354,6 +1354,8 @@ MonoBehaviour:
   rig2D: {fileID: 319241004}
   shipVelocity: 7
   escudo: {fileID: 1178170257}
+  controladorArma: {fileID: 709109423}
+  pegouPowerUpTiro: 0
 --- !u!114 &319241007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1369,9 +1371,12 @@ MonoBehaviour:
   barraDeVidaPlayer: {fileID: 2076821909}
   maxVida: 10
   atualVida: 0
-  escudo: 0
   chances: 3
   textoChances: {fileID: 901649906}
+  escudoPlayer: {fileID: 1178170253}
+  escudo: 0
+  maxVidaEscudo: 3
+  vidaAtualEscudo: 3
   player: {fileID: 319241001}
 --- !u!1 &339394177
 GameObject:
@@ -2346,6 +2351,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 709109422}
+  - component: {fileID: 709109423}
   m_Layer: 0
   m_Name: Armas
   m_TagString: Untagged
@@ -2372,6 +2378,22 @@ Transform:
   m_Father: {fileID: 319241003}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &709109423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709109421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80ad82a58283e534b8b1291dbf3fd35e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tiroRapido: {fileID: 734110196}
+  tiroDeFoguete: {fileID: 936800762}
+  tiroLaser: {fileID: 1535130435}
+  armaPowerUp: {fileID: 1204463365}
 --- !u!1 &715551810
 GameObject:
   m_ObjectHideFlags: 0
@@ -2569,7 +2591,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &734110195
 Transform:
   m_ObjectHideFlags: 0
@@ -3117,7 +3139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &936800761
 Transform:
   m_ObjectHideFlags: 0

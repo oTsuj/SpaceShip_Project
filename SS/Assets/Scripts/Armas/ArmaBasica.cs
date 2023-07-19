@@ -61,4 +61,14 @@ public abstract class ArmaBasica : MonoBehaviour
     
     //Tiro do Player
     protected abstract void ShootLaser();
+
+    public void Ativar()
+    {
+        this.gameObject.SetActive(true);
+    }
+
+    public void Desativar()
+    {
+        this.gameObject.SetActive(false);
+    }
 }
