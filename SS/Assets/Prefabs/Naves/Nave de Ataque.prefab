@@ -351,6 +351,12 @@ MonoBehaviour:
   amplitude: 2
   frequency: 3.5
   pontosInimigo: 40
+  chanceDrop: 20
+  itemDrop:
+  - {fileID: 7042249294819279681, guid: daae108d70d657a47b15705364ba2a66, type: 3}
+  - {fileID: 6470702377513589571, guid: bce4ee747e1b2784b9c9a97e7c113c49, type: 3}
+  - {fileID: 6068858357772924383, guid: bfcda739f69fd6e4fb64427961f3c922, type: 3}
+  - {fileID: 2116327325836050899, guid: 4827ece1d418bbc409e8db0e96fa4507, type: 3}
 --- !u!114 &4933010001755495868
 MonoBehaviour:
   m_ObjectHideFlags: 0

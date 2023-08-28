@@ -29,8 +29,9 @@ public class Enemy2 : MonoBehaviour
     
     public int pontosInimigo;
 
+    public int chanceDrop;
+    public GameObject[] itemDrop;
     
-    // Start is called before the first frame update
     void Start()
     {
         proximoDisparo = Time.time + fireRate;
@@ -44,8 +45,7 @@ public class Enemy2 : MonoBehaviour
         minY = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).y;
         maxY = gameCamera.ViewportToWorldPoint(new Vector3(0, 1, 0)).y;
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         MovEnemy();
@@ -78,6 +78,14 @@ public class Enemy2 : MonoBehaviour
         if (currentHealth <= 0)
         {
             GameManager.instance.AdicionarPontos(pontosInimigo);
+
+            int randomNum = Random.Range(0, 100);
+
+            if (randomNum <= chanceDrop)
+            {
+                var drop = Random.Range(0, itemDrop.Length);
+                Instantiate(itemDrop[drop], transform.position, Quaternion.Euler(0f, 0f, 0f));
+            }
 
             Destroy(gameObject);
         }

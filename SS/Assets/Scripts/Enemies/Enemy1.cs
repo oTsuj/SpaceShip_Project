@@ -23,6 +23,9 @@ public class Enemy1 : MonoBehaviour
 
     public int pontosInimigo;
     
+    public int chanceDrop;
+    public GameObject[] itemDrop;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,7 +45,6 @@ public class Enemy1 : MonoBehaviour
     //Mover inimigo
     private void MovEnemy()
     {
-        //rig.velocity = new Vector2(-velX , 0);
         if (rig.position.x > target.position.x)
         {
             transform.position = Vector2.MoveTowards(transform.position, target.position, velX * Time.deltaTime);
@@ -54,7 +56,6 @@ public class Enemy1 : MonoBehaviour
                 rig.velocity = new Vector3(-velX , posRandom, lerp * Time.deltaTime);
             }
         }
-        //transform.position = Vector2.MoveTowards(transform.position, target.position, velX * Time.deltaTime);
     }
     
     //Colidir com Laser
@@ -64,6 +65,14 @@ public class Enemy1 : MonoBehaviour
         if (vidaAtual <= 0)
         {
             GameManager.instance.AdicionarPontos(pontosInimigo);
+            
+            int randomNum = Random.Range(0, 100);
+
+            if (randomNum <= chanceDrop)
+            {
+                int drop = Random.Range(0, itemDrop.Length);
+                Instantiate(itemDrop[drop], transform.position, Quaternion.Euler(0f, 0f, 0f));
+            }
             
             Destroy(gameObject);
         }

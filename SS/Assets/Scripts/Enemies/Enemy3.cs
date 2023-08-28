@@ -33,6 +33,9 @@ public class Enemy3 : MonoBehaviour
     private float maxY;
     
     public int pontosInimigo;
+    
+    public int chanceDrop;
+    public GameObject[] itemDrop;
 
     
     // Start is called before the first frame update
@@ -86,6 +89,14 @@ public class Enemy3 : MonoBehaviour
         if (currentHealth <= 0)
         {
             GameManager.instance.AdicionarPontos(pontosInimigo);
+            
+            int randomNum = Random.Range(0, 100);
+
+            if (randomNum <= chanceDrop)
+            {
+                var drop = Random.Range(0, itemDrop.Length);
+                Instantiate(itemDrop[drop], transform.position, Quaternion.Euler(0f, 0f, 0f));
+            }
 
             Destroy(gameObject);
         }
