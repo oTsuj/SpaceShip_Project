@@ -40,4 +40,16 @@ public class Arma2 : MonoBehaviour
     {
         Instantiate(laserPlayer, localFirePoint.position, localFirePoint.rotation);
     }
+
+    public void GanharMunicao(int municaoParaReceber)
+    {
+        if (tirosAtuais + municaoParaReceber <= maxTiros)
+        {
+            tirosAtuais += municaoParaReceber;
+        }
+        else
+        {
+            tirosAtuais = maxTiros;
+        }
+    }
 }

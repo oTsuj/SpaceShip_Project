@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class PowerUpMunicao1 : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject item;
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        item.gameObject.GetComponent<Arma2>().GanharMunicao(10);
+        Destroy(this.gameObject);
     }
 }

@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class PowerUpTiro : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Transform localDisparo;
+    public GameObject tiro;
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Instantiate(tiro, localDisparo.position, localDisparo.rotation);
+        Destroy(this.gameObject);
     }
 }
