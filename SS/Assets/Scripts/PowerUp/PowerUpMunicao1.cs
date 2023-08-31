@@ -4,10 +4,18 @@ using UnityEngine;
 
 public class PowerUpMunicao1 : MonoBehaviour
 {
-    public GameObject item;
+
+    public int mun = 10;
     private void OnTriggerEnter2D(Collider2D other)
     {
-        item.gameObject.GetComponent<Arma2>().GanharMunicao(10);
-        Destroy(this.gameObject);
+        if (other.CompareTag("Player"))
+        {
+            GameObject player = other.gameObject;
+            
+            Arma2 arma = other.GetComponentInChildren<Arma2>();
+            arma.tirosAtuais = arma.maxTiros;
+            Destroy(this.gameObject); 
+        }
+        
     }
 }
