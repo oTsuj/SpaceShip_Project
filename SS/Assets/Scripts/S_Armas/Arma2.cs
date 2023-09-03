@@ -11,6 +11,9 @@ public class Arma2 : MonoBehaviour
     public int maxTiros;
     public int tirosAtuais;
     public Transform localFirePoint;
+
+    public GameObject armaSelecionada;
+    public bool canShoot;
     
     public virtual void Start()
     {
@@ -20,17 +23,20 @@ public class Arma2 : MonoBehaviour
 
     private void Update()
     {
-        this.intervaloTiro += Time.deltaTime;
-        if (this.intervaloTiro >= this.tempoEsperaTiro)
+        if (canShoot)
         {
-            if (tirosAtuais >= 1)
+            this.intervaloTiro += Time.deltaTime;
+            if (this.intervaloTiro >= this.tempoEsperaTiro)
             {
-                if (Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.Space))
+                if (tirosAtuais >= 1)
                 {
-                    intervaloTiro = 0;
-                    ShootLaser();
-                    tirosAtuais--;
-                    Console.WriteLine("Atirou");
+                    if (Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.Space))
+                    {
+                        intervaloTiro = 0;
+                        ShootLaser();
+                        tirosAtuais--;
+                        Console.WriteLine("Atirou");
+                    }
                 }
             }
         }
@@ -51,5 +57,10 @@ public class Arma2 : MonoBehaviour
         {
             tirosAtuais = maxTiros;
         }
+    }
+
+    public void Ativar()
+    {
+        armaSelecionada.SetActive(true);
     }
 }

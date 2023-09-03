@@ -8,7 +8,10 @@ public class PowerUpEscudo : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
-        other.gameObject.GetComponent<vidaPlayer>().AtivarEscudo();
-        Destroy(this.gameObject);
+        if (other.gameObject.CompareTag("Player"))
+        {
+            other.gameObject.GetComponent<vidaPlayer>().AtivarEscudo();
+            Destroy(this.gameObject);
+        }
     }
 }

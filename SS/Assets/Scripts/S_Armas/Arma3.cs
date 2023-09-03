@@ -12,6 +12,8 @@ public class Arma3 : MonoBehaviour
     public int tirosAtuais;
     public Transform localFirePoint;
     
+    public bool canShoot;
+    
     public virtual void Start()
     {
         tirosAtuais = maxTiros;
@@ -20,17 +22,20 @@ public class Arma3 : MonoBehaviour
 
     private void Update()
     {
-        this.intervaloTiro += Time.deltaTime;
-        if (this.intervaloTiro >= this.tempoEsperaTiro)
+        if (canShoot)
         {
-            if (tirosAtuais >= 1)
+            this.intervaloTiro += Time.deltaTime;
+            if (this.intervaloTiro >= this.tempoEsperaTiro)
             {
-                if (Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.Space))
+                if (tirosAtuais >= 1)
                 {
-                    intervaloTiro = 0;
-                    ShootLaser();
-                    tirosAtuais--;
-                    Console.WriteLine("Atirou");
+                    if (Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.Space))
+                    {
+                        intervaloTiro = 0;
+                        ShootLaser();
+                        tirosAtuais--;
+                        Console.WriteLine("Atirou");
+                    }
                 }
             }
         }

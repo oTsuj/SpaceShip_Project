@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Mono.Cecil.Cil;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,8 +18,8 @@ public class vidaPlayer : MonoBehaviour
     public bool escudo;
     public int maxVidaEscudo;
     public int vidaAtualEscudo;
-
-    public GameObject player;
+    public float tempoMaximoEscudo;
+    public float tempoAtualEscudo;
     
     void Start()
     {
@@ -30,11 +31,13 @@ public class vidaPlayer : MonoBehaviour
         
         escudoPlayer.SetActive(false);
         escudo = false;
+        tempoAtualEscudo = tempoMaximoEscudo;
     }
     
     void Update()
     {
         RetirarChances();
+        RetirarTempoEscudo();
     }
 
     public void DanoPlayer(int danoRecebido)
@@ -65,6 +68,27 @@ public class vidaPlayer : MonoBehaviour
         
         escudoPlayer.SetActive(true);
         escudo = true;
+    }
+
+    public void DesativarEscudo()
+    {
+        escudoPlayer.SetActive(false);
+        escudo = false;
+        tempoAtualEscudo = tempoMaximoEscudo;
+    }
+
+
+    public void RetirarTempoEscudo()
+    {
+        if (escudo)
+        {
+            tempoAtualEscudo -= Time.deltaTime;
+
+            if (tempoAtualEscudo <= 0)
+            {
+                DesativarEscudo();
+            }
+        }
     }
 
     public void RetirarChances()
