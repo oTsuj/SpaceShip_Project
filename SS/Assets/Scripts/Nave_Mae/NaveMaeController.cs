@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NaveMaeController : MonoBehaviour
 {
@@ -41,6 +42,8 @@ public class NaveMaeController : MonoBehaviour
     public bool estagio2;
     public bool estagio3;
 
+    public Slider barraDeVidaBoss;
+
     
     // Start is called before the first frame update
     void Start()
@@ -62,6 +65,9 @@ public class NaveMaeController : MonoBehaviour
         estagio1 = false;
         estagio2 = false;
         estagio3 = false;
+
+        barraDeVidaBoss.maxValue = maxHealth;
+        barraDeVidaBoss.value = currentHealth;
     }
 
     // Update is called once per frame
@@ -93,6 +99,7 @@ public class NaveMaeController : MonoBehaviour
         if (escudo == false)
         {
             currentHealth -= damage;
+            barraDeVidaBoss.value = currentHealth;
             if (currentHealth <= 0)
             {
                 GameManager.instance.AdicionarPontos(pontosInimigo);
