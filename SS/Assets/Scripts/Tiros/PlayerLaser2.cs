@@ -50,5 +50,12 @@ public class PlayerLaser2 : MonoBehaviour
             Instantiate(danoArea, transform.position, transform.rotation);
             Destroy(this.gameObject);
         }
+        
+        if (col.gameObject.CompareTag("NaveMae"))
+        {
+            col.gameObject.GetComponent<NaveMaeController>().TakeDamage(dano);
+            Instantiate(danoArea, transform.position, transform.rotation);
+            Destroy(this.gameObject);
+        }
     }
 }

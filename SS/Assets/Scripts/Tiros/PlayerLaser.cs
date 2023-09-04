@@ -54,5 +54,11 @@ public class PlayerLaser : MonoBehaviour
             col.gameObject.GetComponent<Enemy3>().TakeDamage(dano);
             Destroy(this.gameObject);
         }
+        
+        if (col.gameObject.CompareTag("NaveMae"))
+        {
+            col.gameObject.GetComponent<NaveMaeController>().TakeDamage(dano);
+            Destroy(this.gameObject);
+        }
     }
 }

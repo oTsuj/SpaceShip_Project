@@ -1,36 +1,24 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
-public class Enemy1 : MonoBehaviour
+public class MissilNaveMae : MonoBehaviour
 {
-
-    public Rigidbody2D rig;
-    public float velMax;
-    public float velMin;
-    public int danoAoPlayer;
-    public float lerp = 100f;
     
-    public float vidaMaxima = 50;
-    public float vidaAtual;
-
+    public float lerp = 150f;
     private float velX;
     private Transform target;
-
+    public Rigidbody2D rig;
     private int posRandom;
-
-    public int pontosInimigo;
+    public float velMax;
+    public float velMin;
     
-    public int chanceDrop;
-    public GameObject[] itemDrop;
-
+    public int danoAoPlayer;
+    
     // Start is called before the first frame update
     void Start()
     {
         velX = Random.Range(velMax, velMin);
-        vidaAtual = vidaMaxima;
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         posRandom = Random.Range(5, -5);
     }
@@ -38,12 +26,11 @@ public class Enemy1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MovEnemy();
+        Mov();
+        Rotacionar();
     }
     
-    
-    //Mover inimigo
-    private void MovEnemy()
+    private void Mov()
     {
         if (rig.position.x > target.position.x)
         {
@@ -58,31 +45,20 @@ public class Enemy1 : MonoBehaviour
         }
     }
     
-    //Colidir com Laser
-    public void TakeDamage(float damage)
+    private void Rotacionar()
     {
-        vidaAtual -= damage;
-        if (vidaAtual <= 0)
-        {
-            GameManager.instance.AdicionarPontos(pontosInimigo);
-            
-            int randomNum = Random.Range(0, 100);
-
-            if (randomNum <= chanceDrop)
-            {
-                int drop = Random.Range(0, itemDrop.Length);
-                Instantiate(itemDrop[drop], transform.position, Quaternion.Euler(0f, 0f, 0f));
-            }
-            
-            Destroy(gameObject);
-        }
+        Vector3 direction = target.position - transform.position;
+        direction.Normalize();
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
     }
-
+    
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Player"))
         {
             col.gameObject.GetComponent<vidaPlayer>().DanoPlayer(danoAoPlayer);
+            Destroy(this.gameObject);
         }
         
     }

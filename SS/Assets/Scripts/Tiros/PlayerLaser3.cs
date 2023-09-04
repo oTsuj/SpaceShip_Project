@@ -38,5 +38,10 @@ public class PlayerLaser3 : MonoBehaviour
         {
             col.gameObject.GetComponent<Enemy3>().TakeDamage(dano * Time.deltaTime);
         }
+        
+        if (col.gameObject.CompareTag("NaveMae"))
+        {
+            col.gameObject.GetComponent<NaveMaeController>().TakeDamage(dano * Time.deltaTime);
+        }
     }
 }

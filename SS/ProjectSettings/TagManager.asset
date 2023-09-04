@@ -10,6 +10,7 @@ TagManager:
   - Inimigo1
   - EscudoInimigo
   - PowerUp
+  - NaveMae
   layers:
   - Default
   - TransparentFX
