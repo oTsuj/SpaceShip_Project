@@ -99,8 +99,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laserVelocidade: 20
-  dano: 50
+  dano: 100
   tempovida: 0.4
+  danoArea: {fileID: 8341546062657665626, guid: ec82fe8d8dc9d824fa9cd1749fd62b9a, type: 3}
 --- !u!61 &8676451678723139409
 BoxCollider2D:
   m_ObjectHideFlags: 0

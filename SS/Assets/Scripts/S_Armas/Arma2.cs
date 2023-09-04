@@ -15,6 +15,8 @@ public class Arma2 : MonoBehaviour
     public GameObject armaSelecionada;
     public bool canShoot;
     
+    public GameObject danoArea;
+    
     public virtual void Start()
     {
         tirosAtuais = maxTiros;

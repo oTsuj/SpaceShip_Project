@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &167435086
+--- !u!1 &2066144225
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 167435088}
-  - component: {fileID: 167435087}
-  - component: {fileID: 167435089}
-  - component: {fileID: 167435090}
-  - component: {fileID: 167435091}
+  - component: {fileID: 2066144227}
+  - component: {fileID: 2066144226}
   m_Layer: 0
-  m_Name: Escudo
-  m_TagString: EscudoInimigo
+  m_Name: Escudo Inimigo
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &167435088
+--- !u!4 &2066144227
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 167435086}
+  m_GameObject: {fileID: 2066144225}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -0.15999985, y: -0.06999993, z: 0}
-  m_LocalScale: {x: 2.075, y: 1.8, z: 1}
+  m_LocalPosition: {x: -0.16806841, y: -0.041952133, z: 0}
+  m_LocalScale: {x: 1.8606204, y: 1.2165351, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7348765765243770985}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &167435087
+--- !u!212 &2066144226
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 167435086}
+  m_GameObject: {fileID: 2066144225}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -75,69 +72,18 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 74fc64d951287e7418b7c3bc841c2887, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.45490196}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.22, y: 1.22}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &167435089
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 167435086}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.0070978664, y: 0.008182261}
-  m_Size: {x: 1.0993727, y: 1.0818269}
-  m_Direction: 1
---- !u!114 &167435090
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 167435086}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99da7b21cfc0ca54fb0265ee12d698b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vidaMaxima: 50
-  danoAoPlayer: 0
---- !u!50 &167435091
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 167435086}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &2970543049014174558
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,7 +149,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3378247851357129232}
-  - {fileID: 167435088}
+  - {fileID: 2066144227}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
@@ -348,6 +294,7 @@ MonoBehaviour:
   velMax: 4
   velMin: 3
   maxHealth: 100
+  currentHealth: 0
   amplitude: 2
   frequency: 3.5
   pontosInimigo: 40
@@ -357,6 +304,10 @@ MonoBehaviour:
   - {fileID: 6470702377513589571, guid: bce4ee747e1b2784b9c9a97e7c113c49, type: 3}
   - {fileID: 6068858357772924383, guid: bfcda739f69fd6e4fb64427961f3c922, type: 3}
   - {fileID: 2116327325836050899, guid: 4827ece1d418bbc409e8db0e96fa4507, type: 3}
+  escudoInimgo: {fileID: 2066144225}
+  escudo: 1
+  maxVidaEscudo: 50
+  vidaAtualEscudo: 0
 --- !u!114 &4933010001755495868
 MonoBehaviour:
   m_ObjectHideFlags: 0

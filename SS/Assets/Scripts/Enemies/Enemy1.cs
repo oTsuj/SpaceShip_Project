@@ -13,8 +13,8 @@ public class Enemy1 : MonoBehaviour
     public int danoAoPlayer;
     public float lerp = 100f;
     
-    public int vidaMaxima = 50;
-    private int vidaAtual;
+    public float vidaMaxima = 50;
+    public float vidaAtual;
 
     private float velX;
     private Transform target;
@@ -25,6 +25,8 @@ public class Enemy1 : MonoBehaviour
     
     public int chanceDrop;
     public GameObject[] itemDrop;
+
+    public bool danoContinuo;
 
     // Start is called before the first frame update
     void Start()
@@ -59,7 +61,7 @@ public class Enemy1 : MonoBehaviour
     }
     
     //Colidir com Laser
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         vidaAtual -= damage;
         if (vidaAtual <= 0)

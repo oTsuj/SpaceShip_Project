@@ -8,7 +8,7 @@ public class PlayerLaser : MonoBehaviour
 {
 
     public float laserVelocidade;
-    public int dano = 50;
+    public float dano = 50;
     public float tempovida ;
     
     // Start is called before the first frame update
@@ -52,12 +52,6 @@ public class PlayerLaser : MonoBehaviour
         if (col.gameObject.CompareTag("Inimigo2"))
         {
             col.gameObject.GetComponent<Enemy3>().TakeDamage(dano);
-            Destroy(this.gameObject);
-        }
-        
-        if (col.gameObject.CompareTag("EscudoInimigo"))
-        {
-            col.gameObject.GetComponent<EscudoInimigo>().TakeDamage(dano);
             Destroy(this.gameObject);
         }
     }

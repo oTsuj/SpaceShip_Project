@@ -20,8 +20,8 @@ public class Enemy3 : MonoBehaviour
     public float velMax;
     public float velMin;
     
-    public int maxHealth = 200;
-    private int currentHealth;
+    public float maxHealth = 200f;
+    public float currentHealth;
 
     private float velX;
     
@@ -36,6 +36,11 @@ public class Enemy3 : MonoBehaviour
     
     public int chanceDrop;
     public GameObject[] itemDrop;
+    
+    public GameObject escudoInimgo;
+    public bool escudo;
+    public float maxVidaEscudo;
+    public float vidaAtualEscudo;
 
     
     // Start is called before the first frame update
@@ -53,6 +58,8 @@ public class Enemy3 : MonoBehaviour
         Camera gameCamera = Camera.main;
         minY = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).y;
         maxY = gameCamera.ViewportToWorldPoint(new Vector3(0, 1, 0)).y;
+
+        vidaAtualEscudo = maxVidaEscudo;
     }
 
     // Update is called once per frame
@@ -83,22 +90,35 @@ public class Enemy3 : MonoBehaviour
     }
     
     //Colidir com Laser
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
-        currentHealth -= damage;
-        if (currentHealth <= 0)
+        if (escudo == false)
         {
-            GameManager.instance.AdicionarPontos(pontosInimigo);
-            
-            int randomNum = Random.Range(0, 100);
-
-            if (randomNum <= chanceDrop)
+            currentHealth -= damage;
+            if (currentHealth <= 0)
             {
-                var drop = Random.Range(0, itemDrop.Length);
-                Instantiate(itemDrop[drop], transform.position, Quaternion.Euler(0f, 0f, 0f));
-            }
+                GameManager.instance.AdicionarPontos(pontosInimigo);
+            
+                int randomNum = Random.Range(0, 100);
 
-            Destroy(gameObject);
+                if (randomNum <= chanceDrop)
+                {
+                    var drop = Random.Range(0, itemDrop.Length);
+                    Instantiate(itemDrop[drop], transform.position, Quaternion.Euler(0f, 0f, 0f));
+                }
+
+                Destroy(gameObject);
+            }
+        }
+        else
+        {
+            vidaAtualEscudo -= damage;
+
+            if (vidaAtualEscudo <= 0)
+            {
+                escudoInimgo.SetActive(false);
+                escudo = false;
+            }
         }
     }
     

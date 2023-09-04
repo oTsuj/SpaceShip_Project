@@ -8,6 +8,7 @@ public class ControladorDeArmas : MonoBehaviour
 {
     public GameObject[] Armas;
     private int contador;
+    public GameObject[] Select;
 
     private void Awake()
     {
@@ -41,6 +42,10 @@ public class ControladorDeArmas : MonoBehaviour
             Armas[0].gameObject.GetComponent<Arma1>().canShoot = true;
             Armas[1].gameObject.GetComponent<Arma2>().canShoot = false;
             Armas[2].gameObject.GetComponent<Arma3>().canShoot = false;
+            
+            Select[0].gameObject.SetActive(true);
+            Select[1].gameObject.SetActive(false);
+            Select[2].gameObject.SetActive(false);
         }
 
         if (contador == 1)
@@ -48,6 +53,10 @@ public class ControladorDeArmas : MonoBehaviour
             Armas[0].gameObject.GetComponent<Arma1>().canShoot = false;
             Armas[1].gameObject.GetComponent<Arma2>().canShoot = true;
             Armas[2].gameObject.GetComponent<Arma3>().canShoot = false;
+            
+            Select[0].gameObject.SetActive(false);
+            Select[1].gameObject.SetActive(false);
+            Select[2].gameObject.SetActive(true);
         }
 
         if (contador == 2)
@@ -55,6 +64,10 @@ public class ControladorDeArmas : MonoBehaviour
             Armas[0].gameObject.GetComponent<Arma1>().canShoot = false;
             Armas[1].gameObject.GetComponent<Arma2>().canShoot = false;
             Armas[2].gameObject.GetComponent<Arma3>().canShoot = true;
+            
+            Select[0].gameObject.SetActive(false);
+            Select[1].gameObject.SetActive(true);
+            Select[2].gameObject.SetActive(false);
         }
 
         if (contador > 2)

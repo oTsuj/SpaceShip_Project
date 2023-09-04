@@ -11,9 +11,7 @@ public class PowerUpMunicao1 : MonoBehaviour
         {
             Arma2 arma = other.GetComponentInChildren<Arma2>();
             
-            arma.armaSelecionada.SetActive(true);
             arma.GanharMunicao(10);
-            arma.armaSelecionada.SetActive(false);
             Destroy(this.gameObject);
         }
         
