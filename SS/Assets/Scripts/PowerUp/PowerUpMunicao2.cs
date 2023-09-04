@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class PowerUpMunicao2 : MonoBehaviour
 {
+    public int mun = 10;
     private void OnTriggerEnter2D(Collider2D other)
     {
-        //other.gameObject.GetComponent<Arma3>().GanharCarga(10);
-        Destroy(this.gameObject);
+        if (other.CompareTag("Player"))
+        {
+            Arma3 arma = other.GetComponentInChildren<Arma3>();
+            
+            arma.GanharCarga(mun);
+            Destroy(this.gameObject);
+        }
+        
     }
 }

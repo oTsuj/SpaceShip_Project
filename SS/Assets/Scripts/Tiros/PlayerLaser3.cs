@@ -6,7 +6,8 @@ public class PlayerLaser3 : MonoBehaviour
 {
     public float dano = 1;
     
-    
+    public Transform pontoDeOrigem; 
+    public float distanciaFixaX = 1.0f; 
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +18,8 @@ public class PlayerLaser3 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Vector3 novaPosicao = pontoDeOrigem.position + new Vector3(distanciaFixaX, 0, 0);
+        transform.position = novaPosicao;
     }
 
     private void OnTriggerStay2D(Collider2D col)

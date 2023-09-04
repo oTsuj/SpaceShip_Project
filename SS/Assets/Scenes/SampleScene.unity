@@ -1342,6 +1342,7 @@ GameObject:
   m_Component:
   - component: {fileID: 211229492}
   - component: {fileID: 211229491}
+  - component: {fileID: 211229493}
   m_Layer: 0
   m_Name: Nave Mae
   m_TagString: Untagged
@@ -1416,6 +1417,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!70 &211229493
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211229490}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0136354165, y: 0.0015652189}
+  m_Size: {x: 1.7128471, y: 0.9764073}
+  m_Direction: 1
 --- !u!1 &229095382
 GameObject:
   m_ObjectHideFlags: 0
@@ -1610,7 +1627,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9278d461f3b8df84d983dece55fcba46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dano: 25
+  dano: 50
+  pontoDeOrigem: {fileID: 1172012545}
+  distanciaFixaX: 5.2
 --- !u!61 &270311936
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1654,7 +1673,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4206135752213224017, guid: ef3e6cffa99e49b40a04726148d1c4a9, type: 3}
       propertyPath: vidaMaxima
-      value: 500
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4206135752213224020, guid: ef3e6cffa99e49b40a04726148d1c4a9, type: 3}
       propertyPath: m_Name
@@ -3868,7 +3887,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4206135752213224017, guid: ef3e6cffa99e49b40a04726148d1c4a9, type: 3}
       propertyPath: vidaMaxima
-      value: 500
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4206135752213224020, guid: ef3e6cffa99e49b40a04726148d1c4a9, type: 3}
       propertyPath: m_Name
@@ -5615,12 +5634,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e52709aa75ef0e84095bd34ee689d772, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserPlayer: {fileID: 0}
   tempoEsperaTiro: 0
-  maxTiros: 0
+  maxTiros: 100
   tirosAtuais: 0
   localFirePoint: {fileID: 0}
+  laser: {fileID: 270311932}
   canShoot: 0
+  descontar: 0
 --- !u!1 &1550318774
 GameObject:
   m_ObjectHideFlags: 0
@@ -5805,7 +5825,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4206135752213224017, guid: ef3e6cffa99e49b40a04726148d1c4a9, type: 3}
       propertyPath: vidaMaxima
-      value: 500
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4206135752213224020, guid: ef3e6cffa99e49b40a04726148d1c4a9, type: 3}
       propertyPath: m_Name
@@ -6545,53 +6565,41 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -2.39
       objectReference: {fileID: 0}
-    - target: {fileID: 1326550542200021481, guid: bfcda739f69fd6e4fb64427961f3c922, type: 3}
-      propertyPath: m_Name
-      value: Municao2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4407854702479684880, guid: bfcda739f69fd6e4fb64427961f3c922, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4407854702479684880, guid: bfcda739f69fd6e4fb64427961f3c922, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 8.799265
-      objectReference: {fileID: 0}
-    - target: {fileID: 4407854702479684880, guid: bfcda739f69fd6e4fb64427961f3c922, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -9.069881
-      objectReference: {fileID: 0}
-    - target: {fileID: 4407854702479684880, guid: bfcda739f69fd6e4fb64427961f3c922, type: 3}
+    - target: {fileID: 158201200667229562, guid: bfcda739f69fd6e4fb64427961f3c922, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4407854702479684880, guid: bfcda739f69fd6e4fb64427961f3c922, type: 3}
+    - target: {fileID: 158201200667229562, guid: bfcda739f69fd6e4fb64427961f3c922, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4407854702479684880, guid: bfcda739f69fd6e4fb64427961f3c922, type: 3}
+    - target: {fileID: 158201200667229562, guid: bfcda739f69fd6e4fb64427961f3c922, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4407854702479684880, guid: bfcda739f69fd6e4fb64427961f3c922, type: 3}
+    - target: {fileID: 158201200667229562, guid: bfcda739f69fd6e4fb64427961f3c922, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4407854702479684880, guid: bfcda739f69fd6e4fb64427961f3c922, type: 3}
+    - target: {fileID: 158201200667229562, guid: bfcda739f69fd6e4fb64427961f3c922, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4407854702479684880, guid: bfcda739f69fd6e4fb64427961f3c922, type: 3}
+    - target: {fileID: 158201200667229562, guid: bfcda739f69fd6e4fb64427961f3c922, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4407854702479684880, guid: bfcda739f69fd6e4fb64427961f3c922, type: 3}
+    - target: {fileID: 158201200667229562, guid: bfcda739f69fd6e4fb64427961f3c922, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4407854702479684880, guid: bfcda739f69fd6e4fb64427961f3c922, type: 3}
+    - target: {fileID: 158201200667229562, guid: bfcda739f69fd6e4fb64427961f3c922, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6068858357772924383, guid: bfcda739f69fd6e4fb64427961f3c922, type: 3}
+      propertyPath: m_Name
+      value: Municao2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfcda739f69fd6e4fb64427961f3c922, type: 3}
@@ -7392,7 +7400,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4206135752213224017, guid: ef3e6cffa99e49b40a04726148d1c4a9, type: 3}
       propertyPath: vidaMaxima
-      value: 500
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4206135752213224020, guid: ef3e6cffa99e49b40a04726148d1c4a9, type: 3}
       propertyPath: m_Name

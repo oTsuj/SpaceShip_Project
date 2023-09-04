@@ -5,19 +5,22 @@ using UnityEngine;
 
 public class Arma3 : MonoBehaviour
 {
-    public GameObject laserPlayer;
     private float intervaloTiro;
     public float tempoEsperaTiro;
     public int maxTiros;
-    public int tirosAtuais;
+    public float tirosAtuais;
     public Transform localFirePoint;
+
+    public GameObject laser;
     
     public bool canShoot;
+    public bool descontar;
     
-    public virtual void Start()
+    public void Start()
     {
         tirosAtuais = maxTiros;
         intervaloTiro = 0;
+        laser.SetActive(false);
     }
 
     private void Update()
@@ -29,23 +32,25 @@ public class Arma3 : MonoBehaviour
             {
                 if (tirosAtuais >= 1)
                 {
-                    if (Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.Space))
+                    if (Input.GetButton("Fire1") || Input.GetKey(KeyCode.Space))
                     {
-                        intervaloTiro = 0;
-                        ShootLaser();
-                        tirosAtuais--;
-                        Console.WriteLine("Atirou");
+                        laser.SetActive(true);
+                        tirosAtuais -= Time.deltaTime * 10;
                     }
+
+                    if (Input.GetButtonUp("Fire1") || Input.GetKeyUp(KeyCode.Space))
+                    {
+                        laser.SetActive(false);
+                    }
+                }
+                else
+                {
+                    laser.SetActive(false);
                 }
             }
         }
     }
 
-    void ShootLaser()
-    {
-        Instantiate(laserPlayer, localFirePoint.position, localFirePoint.rotation);
-    }
-    
     public void GanharCarga(int municaoParaReceber)
     {
         if (tirosAtuais + municaoParaReceber <= maxTiros)
