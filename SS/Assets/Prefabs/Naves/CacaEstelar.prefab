@@ -168,8 +168,9 @@ MonoBehaviour:
   danoAoPlayer: 1
   lerp: 100
   vidaMaxima: 50
+  vidaAtual: 0
   pontosInimigo: 20
-  chanceDrop: 100
+  chanceDrop: 30
   itemDrop:
   - {fileID: 7042249294819279681, guid: daae108d70d657a47b15705364ba2a66, type: 3}
   - {fileID: 6470702377513589571, guid: bce4ee747e1b2784b9c9a97e7c113c49, type: 3}
