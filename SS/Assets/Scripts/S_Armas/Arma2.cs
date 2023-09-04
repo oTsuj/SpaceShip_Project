@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Arma2 : MonoBehaviour
 {
@@ -16,11 +17,14 @@ public class Arma2 : MonoBehaviour
     public bool canShoot;
     
     public GameObject danoArea;
+
+    public Text textoMunicao;
     
     public virtual void Start()
     {
         tirosAtuais = maxTiros;
         intervaloTiro = 0;
+        textoMunicao.text = tirosAtuais.ToString();
     }
 
     private void Update()
@@ -37,6 +41,7 @@ public class Arma2 : MonoBehaviour
                         intervaloTiro = 0;
                         ShootLaser();
                         tirosAtuais--;
+                        textoMunicao.text = tirosAtuais.ToString();
                         Console.WriteLine("Atirou");
                     }
                 }

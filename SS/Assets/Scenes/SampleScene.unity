@@ -1469,7 +1469,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -22.9, y: -0.0000033379}
+  m_AnchoredPosition: {x: -25.9, y: -0.0000033379}
   m_SizeDelta: {x: 71.876, y: 47.6684}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &229095384
@@ -1494,12 +1494,12 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
+    m_FontSize: 30
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -3870,6 +3870,7 @@ MonoBehaviour:
   armaSelecionada: {fileID: 936800760}
   canShoot: 0
   danoArea: {fileID: 0}
+  textoMunicao: {fileID: 229095384}
 --- !u!1001 &945503823
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3975,8 +3976,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -24.699997, y: 0}
-  m_SizeDelta: {x: 68.3936, y: 45.5576}
+  m_AnchoredPosition: {x: -21.4, y: 1.5}
+  m_SizeDelta: {x: 87.37, y: 45.5576}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &957422850
 MonoBehaviour:
@@ -4000,18 +4001,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
+    m_FontSize: 30
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100
+  m_Text: 100%
 --- !u!222 &957422851
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4238,7 +4239,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 31.9, y: -11.5}
+  m_AnchoredPosition: {x: -27.2, y: -2.2}
   m_SizeDelta: {x: 178.4841, y: 129.0719}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &984296555
@@ -4263,12 +4264,12 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 95
+    m_FontSize: 75
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 1
+    m_MinSize: 0
     m_MaxSize: 122
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -5641,6 +5642,7 @@ MonoBehaviour:
   laser: {fileID: 270311932}
   canShoot: 0
   descontar: 0
+  textoMunicao: {fileID: 957422850}
 --- !u!1 &1550318774
 GameObject:
   m_ObjectHideFlags: 0

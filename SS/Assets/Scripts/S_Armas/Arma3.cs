@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Arma3 : MonoBehaviour
 {
@@ -15,12 +16,15 @@ public class Arma3 : MonoBehaviour
     
     public bool canShoot;
     public bool descontar;
+
+    public Text textoMunicao;
     
     public void Start()
     {
         tirosAtuais = maxTiros;
         intervaloTiro = 0;
         laser.SetActive(false);
+        textoMunicao.text = tirosAtuais + "%";
     }
 
     private void Update()
@@ -36,6 +40,7 @@ public class Arma3 : MonoBehaviour
                     {
                         laser.SetActive(true);
                         tirosAtuais -= Time.deltaTime * 10;
+                        textoMunicao.text = tirosAtuais + "%";
                     }
 
                     if (Input.GetButtonUp("Fire1") || Input.GetKeyUp(KeyCode.Space))
