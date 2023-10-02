@@ -102,7 +102,7 @@ public class NaveMaeController : MonoBehaviour
             barraDeVidaBoss.value = currentHealth;
             if (currentHealth <= 0)
             {
-                GameManager.instance.AdicionarPontos(pontosInimigo);
+                GameManager.Instance.AdicionarPontos(pontosInimigo);
 
                 Destroy(gameObject);
             }

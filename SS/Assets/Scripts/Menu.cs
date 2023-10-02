@@ -9,7 +9,7 @@ public class Menu : MonoBehaviour
     [SerializeField] private string nomeLevelJogo;
     public void Play()
     {
-        SceneManager.LoadScene(nomeLevelJogo);
+        GameManager.Instance.ChamarCenas();
     }
 
     public void Quit()
