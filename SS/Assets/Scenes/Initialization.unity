@@ -167,6 +167,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textoPontuacao: {fileID: 0}
   inimigosDerrotados: 0
+  posPlayer: {fileID: 0}
+  player: {fileID: 3507834340229494623, guid: 3d9aac06857d7a240b330ee9940765e3, type: 3}
   Menu: Menu
   GUI: GUI
   Fase1: Fase1

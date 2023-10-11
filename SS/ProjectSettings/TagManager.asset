@@ -11,6 +11,7 @@ TagManager:
   - EscudoInimigo
   - PowerUp
   - NaveMae
+  - LocalSpawn
   layers:
   - Default
   - TransparentFX

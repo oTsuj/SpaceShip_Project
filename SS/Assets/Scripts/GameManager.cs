@@ -15,6 +15,9 @@ public class GameManager : MonoBehaviour
 
     public int inimigosDerrotados;
 
+    public GameObject posPlayer;
+    [SerializeField] private GameObject player;
+
     [SerializeField] private string Menu;
     [SerializeField] private string GUI;
     [SerializeField] private string Fase1;
@@ -43,7 +46,7 @@ public class GameManager : MonoBehaviour
     public void ChamarCenas()
     {
         SceneManager.LoadScene(GUI);
-        SceneManager.LoadScene(Fase1, LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync(Fase1, LoadSceneMode.Additive).completed +=delegate(AsyncOperation operation) { InstanciarOPlayer(); };
     }
 
     // Update is called once per frame
@@ -56,5 +59,11 @@ public class GameManager : MonoBehaviour
     {
         inimigosDerrotados += pontosGanhos;
         textoPontuacao.text = "Pontos: " + inimigosDerrotados;
+    }
+
+    public void InstanciarOPlayer()
+    {
+        posPlayer = GameObject.FindGameObjectWithTag("LocalSpawn");
+        Instantiate(player, posPlayer.transform.position, Quaternion.Euler(0, 0, 0));
     }
 }
