@@ -25,13 +25,7 @@ public class vidaPlayer : MonoBehaviour
     {
         textoChances.text = "0" + chances + " x";
         
-        atualVida = maxVida;
-        barraDeVidaPlayer.maxValue = maxVida;
-        barraDeVidaPlayer.value = atualVida;
-        
-        escudoPlayer.SetActive(false);
-        escudo = false;
-        tempoAtualEscudo = tempoMaximoEscudo;
+        PlayerReset();
     }
     
     void Update()
@@ -114,6 +108,19 @@ public class vidaPlayer : MonoBehaviour
                 Time.timeScale = 0;
             }
         }
+    }
+
+    public void PlayerReset()
+    {
+        atualVida = maxVida;
+        //barraDeVidaPlayer.maxValue = maxVida;
+        //barraDeVidaPlayer.value = atualVida;
+        
+        escudoPlayer.SetActive(false);
+        escudo = false;
+        tempoAtualEscudo = tempoMaximoEscudo;
+        
+        RetirarTempoEscudo();
     }
     
     

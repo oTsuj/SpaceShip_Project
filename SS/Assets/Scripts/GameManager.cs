@@ -65,5 +65,7 @@ public class GameManager : MonoBehaviour
     {
         posPlayer = GameObject.FindGameObjectWithTag("LocalSpawn");
         Instantiate(player, posPlayer.transform.position, Quaternion.Euler(0, 0, 0));
+        
+        player.GetComponent<vidaPlayer>().PlayerReset();
     }
 }

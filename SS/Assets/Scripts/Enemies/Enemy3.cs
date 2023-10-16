@@ -97,7 +97,7 @@ public class Enemy3 : MonoBehaviour
             currentHealth -= damage;
             if (currentHealth <= 0)
             {
-                GameManager.Instance.AdicionarPontos(pontosInimigo);
+                //GameManager.Instance.AdicionarPontos(pontosInimigo);
             
                 int randomNum = Random.Range(0, 100);
 

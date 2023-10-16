@@ -68,7 +68,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3507834339376627705
 Transform:
   m_ObjectHideFlags: 0
@@ -390,7 +390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barraDeVidaPlayer: {fileID: 0}
   maxVida: 10
-  atualVida: 0
+  atualVida: 10
   chances: 3
   textoChances: {fileID: 0}
   escudoPlayer: {fileID: 3507834339376627707}
@@ -398,7 +398,7 @@ MonoBehaviour:
   maxVidaEscudo: 3
   vidaAtualEscudo: 3
   tempoMaximoEscudo: 5
-  tempoAtualEscudo: 0
+  tempoAtualEscudo: 5
 --- !u!114 &3507834340229494598
 MonoBehaviour:
   m_ObjectHideFlags: 0
