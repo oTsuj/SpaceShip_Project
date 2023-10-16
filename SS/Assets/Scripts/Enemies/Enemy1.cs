@@ -64,7 +64,7 @@ public class Enemy1 : MonoBehaviour
         vidaAtual -= damage;
         if (vidaAtual <= 0)
         {
-            //GameManager.Instance.AdicionarPontos(pontosInimigo);
+            GameManager.Instance.AdicionarPontos(pontosInimigo);
             
             int randomNum = Random.Range(0, 100);
 

@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(Menu);
         inimigosDerrotados = 0;
-        textoPontuacao.text = "Pontos: " + inimigosDerrotados;
+        //textoPontuacao.text = "Pontos: " + inimigosDerrotados;
     }
 
     public void ChamarCenas()
@@ -58,7 +58,8 @@ public class GameManager : MonoBehaviour
     public void AdicionarPontos(int pontosGanhos)
     {
         inimigosDerrotados += pontosGanhos;
-        textoPontuacao.text = "Pontos: " + inimigosDerrotados;
+        PlayerObserverManager.PointsChanged(inimigosDerrotados);
+        //textoPontuacao.text = "Pontos: " + inimigosDerrotados;
     }
 
     public void InstanciarOPlayer()

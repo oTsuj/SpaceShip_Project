@@ -286,7 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ef16622edd0d541ab2e6d9d89e12a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  danoAoPlayer: 1
+  danoAoPlayer: 2
   laserInimigo: {fileID: 4454051987054015821, guid: 5000eb2a894d7d344bafefca02498b83, type: 3}
   localDisparo: {fileID: 3378247851357129232}
   fireRate: 1

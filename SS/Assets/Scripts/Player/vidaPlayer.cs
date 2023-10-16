@@ -7,7 +7,6 @@ using UnityEngine.UI;
 
 public class vidaPlayer : MonoBehaviour
 {
-    public Slider barraDeVidaPlayer;
     public int maxVida;
     public int atualVida;
 
@@ -23,9 +22,10 @@ public class vidaPlayer : MonoBehaviour
     
     void Start()
     {
-        textoChances.text = "0" + chances + " x";
+        //textoChances.text = "0" + chances + " x";
         
         PlayerReset();
+        PlayerObserverManager.LifeChanged(atualVida);
     }
     
     void Update()
@@ -39,10 +39,8 @@ public class vidaPlayer : MonoBehaviour
         if (escudo == false)
         {
             atualVida -= danoRecebido;
-            barraDeVidaPlayer.value = atualVida;
-            
-            Debug.Log(atualVida);
-            
+            PlayerObserverManager.LifeChanged(atualVida);
+
         }
         else
         {
@@ -95,7 +93,6 @@ public class vidaPlayer : MonoBehaviour
                 atualVida = maxVida;
                 if (atualVida == maxVida)
                 {
-                    barraDeVidaPlayer.value = atualVida;
                     chances--;
                 }
                 
@@ -113,13 +110,10 @@ public class vidaPlayer : MonoBehaviour
     public void PlayerReset()
     {
         atualVida = maxVida;
-        //barraDeVidaPlayer.maxValue = maxVida;
-        //barraDeVidaPlayer.value = atualVida;
-        
         escudoPlayer.SetActive(false);
         escudo = false;
         tempoAtualEscudo = tempoMaximoEscudo;
-        
+
         RetirarTempoEscudo();
     }
     

@@ -813,8 +813,9 @@ GameObject:
   m_Component:
   - component: {fileID: 465268876}
   - component: {fileID: 465268877}
+  - component: {fileID: 465268878}
   m_Layer: 5
-  m_Name: Barra de Vida Player
+  m_Name: Player Life UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -887,12 +888,24 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 10
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 10
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &465268878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465268875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8db4b1f8d8fb3944f8bc2aaabcfcd47f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &490763273
 GameObject:
   m_ObjectHideFlags: 0
@@ -1828,8 +1841,9 @@ GameObject:
   - component: {fileID: 1922790902}
   - component: {fileID: 1922790901}
   - component: {fileID: 1922790900}
+  - component: {fileID: 1922790903}
   m_Layer: 5
-  m_Name: Texto Pontuacao
+  m_Name: Player Points UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1903,7 +1917,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Pontos: 100000'
+  m_Text: 0
 --- !u!222 &1922790902
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1912,6 +1926,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1922790898}
   m_CullTransparentMesh: 1
+--- !u!114 &1922790903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922790898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc1688fc6f92a746975f2dd59ed9479, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1975171590
 GameObject:
   m_ObjectHideFlags: 0

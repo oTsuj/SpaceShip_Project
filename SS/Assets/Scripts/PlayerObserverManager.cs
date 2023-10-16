@@ -1,18 +1,22 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerObserverManager : MonoBehaviour
+public static class PlayerObserverManager
 {
-    // Start is called before the first frame update
-    void Start()
+    public static Action<int> OnPointsChanged;
+
+    public static void PointsChanged(int points)
     {
-        
+        OnPointsChanged?.Invoke(points);
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public static Action<int> OnLifeChanged;
+
+    public static void LifeChanged(int life)
     {
-        
+        OnLifeChanged?.Invoke(life);
     }
 }
